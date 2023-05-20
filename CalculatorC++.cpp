@@ -88,8 +88,7 @@ void sqrrt() {
     cout << sqrt(dfirst) << "\n";
 }
 
-int main() 
-{
+int main() {
     cout << "Welcome To the calculator!!\n";
     while (true) {
         string user;
