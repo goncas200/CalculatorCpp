@@ -128,6 +128,5 @@ int main()
             cout << "Error: Try to put . in floats instead of ,\n";
         }
     }
-
-    return 1;
+    return EXIT_FAILURE;
 }
