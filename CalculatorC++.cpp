@@ -3,8 +3,6 @@
 
 using namespace std;
 
-const int MAX_LENGTH = 64;
-
 void add() {
     double first, second;
     cout << "First number: ";
