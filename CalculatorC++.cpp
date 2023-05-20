@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include <cmath>
-
 using namespace std;
 
 double better_double(string s) {
