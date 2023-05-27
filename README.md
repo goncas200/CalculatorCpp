@@ -1,3 +1,10 @@
 # CalculatorC++
 
-Just a console based calculator in C++ :)
+Calculator on C++
+
+Operations:
+  + = adds
+  - = subtracts
+  * = multiplies
+  / = divide
+  % = power of
