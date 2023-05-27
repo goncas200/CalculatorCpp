@@ -3,7 +3,7 @@
 Calculator on C++
 
 Operations:
-  + = adds
+  "+" = adds
   - = subtracts
   * = multiplies
   / = divide
