@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 #include <cmath>
 #include <vector>
 using namespace std;
@@ -32,7 +31,9 @@ int main() {
         vector<double> number;
         vector<char> operations;
         bool first = true;
+        bool priority = false;
         int number_interator = 0;
+        int priority_iterator = 0;
         double ffinal = 0;
         cout << "Operation: ";
         getline(cin, user);
@@ -40,35 +41,26 @@ int main() {
             if (i == ' ') {
                 continue;
             }
-            if (i == '+') {
-                number.push_back(stod(s));
-                operations.push_back(i);
-                s = "";
+            if (i == '+' or i == '-') {
+                if (!priority) {
+                    number.push_back(stod(s));
+                    operations.push_back(i);
+                    s = "";
+                }
+                else {
+                    number.insert(number.begin() + priority_iterator, stod(s));
+                    operations.push_back(i);
+                    s = "";
+                    ++priority_iterator;
+                    priority = false;
+                }
             }
-            else if (i == '-') {
-                number.push_back(stod(s));
-                operations.push_back(i);
+            else if (i == '*' or i == '/' or i == '%') {
+                number.insert(number.begin() + priority_iterator, stod(s));
+                operations.insert(operations.begin() + priority_iterator, i);
                 s = "";
-            }
-            else if (i == '*') {
-                number.push_back(stod(s));
-                operations.push_back(i);
-                s = "";
-            }
-            else if (i == '/') {
-                number.push_back(stod(s));
-                operations.push_back(i);
-                s = "";
-            }
-            else if (i == '%') {
-                number.push_back(stod(s));
-                operations.push_back(i);
-                s = "";
-            }
-            else if (i == '%') {
-                number.push_back(stod(s));
-                operations.push_back(i);
-                s = "";
+                priority = true;
+                ++priority_iterator;
             }
             else s += i;
         }
